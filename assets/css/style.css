@@ -23,9 +23,10 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/image00004.jpeg") top right no-repeat;
+  background: #040404 url("../img/image00004.jpeg") no-repeat;
   filter: grayscale(100%);
-  background-size: cover;
+  background-size: 50%;
+  background-position: top right;
   left: 0;
   right: 0;
   top: 0;
