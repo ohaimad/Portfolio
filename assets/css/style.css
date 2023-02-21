@@ -23,7 +23,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/image00004.jpeg") no-repeat;
+  background: #040404 url("../img/image00004.jpg") no-repeat;
   filter: grayscale(100%);
   background-size: 50%;
   background-position: top right;
