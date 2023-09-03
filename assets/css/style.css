@@ -18,6 +18,7 @@ body {
   color: #fff;
   position: relative;
   background: transparent;
+  cursor: url(/img/image00004), auto;
 }
 
 body::before {
@@ -25,13 +26,39 @@ body::before {
   position: fixed;
   background: #040404 url("../img/image00004.jpg") no-repeat;
   filter: grayscale(100%);
-  background-size: 50%;
-  background-position: top right;
+  background-size: 100%; /* Start with a smaller size */
+  background-position: top;
   left: 0;
   right: 0;
-  top: 0;
+  bottom: 0;
   height: 100vh;
   z-index: -1;
+
+  /* animation-name: animatedBackground; */
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  /* animation-iteration-count: infinite; */
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-size: 400%; /* Start with a smaller size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body::before {
+    background-size: 50%; /* set new background-size for smaller screens */
+  }
+}
+
+.resized {
+  width: 200px;
+  height: auto;
+}
+
+.move {
+  margin-left: 100px;  
 }
 
 @media (min-width: 1024px) {
@@ -562,6 +589,15 @@ section .container {
   min-height: 320px;
 }
 
+.testimonials .testimonial-item .faces{
+  width: 70px;
+  border-radius: 50%;
+  margin: -40px 0 0 40px;
+  position: relative;
+  z-index: 2;
+  border: 6px solid rgba(255, 255, 255, 0.12);
+}
+
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
   border-radius: 50%;
@@ -570,6 +606,7 @@ section .container {
   z-index: 2;
   border: 6px solid rgba(255, 255, 255, 0.12);
 }
+
 
 .testimonials .testimonial-item h3 {
   font-size: 18px;
@@ -774,9 +811,13 @@ section .container {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
+.portfolio-item{
+  width: 400px;
+  height: 400px; 
+  margin-bottom: 90px;
+  object-fit: cover;
 }
+
 
 .portfolio #portfolio-flters {
   padding: 0;
@@ -816,7 +857,14 @@ section .container {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  height: 100%;
   background: rgba(0, 0, 0, 0.6);
+}
+
+.showcase-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .portfolio .portfolio-wrap::before {
@@ -1011,6 +1059,9 @@ section .container {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.bi-behance::before {
+   content: "\f65c"; 
+}
 .contact .info-box i.bx {
   font-size: 24px;
   color: #18d26e;
