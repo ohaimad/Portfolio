@@ -12,13 +12,13 @@
   font-family:"StretchPro";
   src: url(/Fonts/StretchPro.otf);
 }
+
 body {
-  font-family: "Open Sans" sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #040404;
   color: #fff;
   position: relative;
   background: transparent;
-  cursor: url(/img/image00004), auto;
 }
 
 body::before {
@@ -26,30 +26,13 @@ body::before {
   position: fixed;
   background: #040404 url("../img/image00004.jpg") no-repeat;
   filter: grayscale(100%);
-  background-size: 100%; /* Start with a smaller size */
-  background-position: top;
+  background-size: 900px 1400px; /* Set a fixed size for the background image */
+  background-position: bottom right; /* Set the position to the bottom right */
   left: 0;
   right: 0;
   bottom: 0;
   height: 100vh;
   z-index: -1;
-
-  /* animation-name: animatedBackground; */
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  /* animation-iteration-count: infinite; */
-}
-
-@keyframes animatedBackground {
-  0% {
-    background-size: 400%; /* Start with a smaller size */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body::before {
-    background-size: 50%; /* set new background-size for smaller screens */
-  }
 }
 
 .resized {
