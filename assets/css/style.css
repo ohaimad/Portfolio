@@ -24,9 +24,8 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/image00004.jpg") no-repeat;
-  filter: grayscale(100%);
-  background-size: 900px 1400px; /* Set a fixed size for the background image */
+  background: #040404 url("../img/WhatsApp\ Image\ 2023-09-04\ at\ 14.39.40.jpeg") no-repeat;
+  background-size: cover;
   background-position: bottom right; /* Set the position to the bottom right */
   left: 0;
   right: 0;
@@ -164,7 +163,7 @@ h6 {
   }
 }
 
-.typewriter {
+/* .typewriter {
   overflow: hidden;
   white-space: nowrap;
 }
@@ -173,7 +172,7 @@ h6 {
   content: '|';
   display: inline-block;
   animation: cursorBlink 0.7s infinite;
-}
+} */
 
 @keyframes cursorBlink {
   0% {
@@ -1256,4 +1255,38 @@ section .container {
 
 .credits a:hover {
   color: #fff;
+}
+
+
+
+
+
+/* Importing Google font - Inter */
+/* Importing Google font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+.txt span {
+    color: #BD53ED;
+    position: relative;
+}
+
+.txt span::before {
+    content: "";
+    height: 30px;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    right: -1%;
+    background: #ffffff;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+.txt span.stop-blinking::before {
+    animation: none;
+}
+
+@keyframes blink {
+    50% { opacity: 0 }
 }
