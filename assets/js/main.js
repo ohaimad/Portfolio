@@ -250,3 +250,30 @@
   new PureCounter();
 
 })()
+
+const typewriterTexts = document.querySelectorAll('.typewriter');
+typewriterTexts.forEach((typewriterText) => {
+  const words = typewriterText.innerText.split(' ');
+  typewriterText.innerText = '';
+
+  let i = 0;
+  let j = 0;
+
+  function typeWriter() {
+    if (i < words.length) {
+      if (j < words[i].length) {
+        typewriterText.innerHTML += words[i].charAt(j);
+        j++;
+        setTimeout(typeWriter, 100); // Adjust the typing speed (milliseconds)
+      } else {
+        i++;
+        j = 0;
+        typewriterText.innerHTML += ' ';
+        setTimeout(typeWriter, 400); // Adjust the delay between words (milliseconds)
+      }
+    }
+  }
+
+  // Start the typewriter effect
+  setTimeout(typeWriter, 1500); // Adjust the delay before starting the animation (milliseconds)
+});
